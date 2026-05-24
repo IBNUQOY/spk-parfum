@@ -1,0 +1,14 @@
+<svg width="240" height="80" viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+  <rect width="240" height="80" rx="16" fill="#ffffff" />
+  <path d="M30 68 L45 12 L60 68 L48 68 L48 48 L37 48 L37 68 Z" fill="url(#grad)" />
+  <path d="M62 22 L78 22 L78 34 L75 34 L75 26 L62 26 Z M68 34 L68 62 L77 62 L77 68 L62 68 L62 34 Z" fill="#0f766e" opacity="0.9"/>
+  <text x="88" y="32" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#0f766e">ARTEMISIA</text>
+  <text x="88" y="54" font-family="Inter, sans-serif" font-size="10" fill="#475569">CREATIVE CO.</text>
+</svg>
