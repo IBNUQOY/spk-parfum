@@ -61,10 +61,12 @@ function Settings() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
+        const avatarUrl = reader.result;
         setProfileData((prev) => ({
           ...prev,
-          avatar: reader.result,
+          avatar: avatarUrl,
         }));
+        updateProfile({ avatar: avatarUrl });
       };
       reader.readAsDataURL(file);
     }

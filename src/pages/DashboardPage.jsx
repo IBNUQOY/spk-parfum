@@ -33,14 +33,14 @@ export default function Dashboard() {
   return (
     <div className='min-h-screen relative'>
 
-      <div className='p-8 max-w-7xl mx-auto relative z-10'>
+      <div className='p-6 sm:p-8 max-w-7xl mx-auto relative z-10'>
         {/* Header Section */}
         <div className='mb-12'>
           <div className='inline-block mb-4'>
             <span className='text-sm font-semibold text-blue-400 bg-blue-500/10 px-4 py-1 rounded-full border border-blue-500/30'>Dashboard</span>
           </div>
-          <h1 className='text-5xl font-bold text-white mb-3'>SPK Parfum</h1>
-          <p className='text-lg text-slate-400'>Sistem Pendukung Keputusan untuk Seleksi Alternatif Parfum Terbaik</p>
+          <h1 className='text-4xl sm:text-5xl font-bold text-white mb-3'>SPK Parfum</h1>
+          <p className='text-base sm:text-lg text-slate-400'>Sistem Pendukung Keputusan untuk Seleksi Alternatif Parfum Terbaik</p>
         </div>
 
         {/* Stats Grid */}

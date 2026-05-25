@@ -7,7 +7,8 @@ import {
   Trophy,
   Settings,
   Database,
-  LogOut
+  LogOut,
+  X
 } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 
@@ -49,13 +50,13 @@ const menu = [
   }
 ]
 
-export default function Sidebar() {
+export default function Sidebar({ open = false, onClose = () => {} }) {
   const location = useLocation()
   const { admin, logout } = useAuth()
   const avatarSrc = admin?.avatar || '/logo.png'
 
   return (
-    <div className="w-64 min-h-screen bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 text-white shadow-2xl fixed left-0 top-0 z-40 flex flex-col border-r border-blue-900/30">
+    <aside className={`fixed inset-y-0 left-0 z-40 w-full max-w-xs transform bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 text-white shadow-2xl border-r border-blue-900/30 flex flex-col transition-transform duration-300 ease-out ${open ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 md:w-64 md:max-w-none`}>
       {/* Animated background in sidebar */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -79,6 +80,14 @@ export default function Sidebar() {
           SPK Parfum
         </h1>
         <p className="text-xs text-blue-300/70 mt-1">Sistem Pendukung Keputusan</p>
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-4 right-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900/80 text-slate-100 transition hover:bg-slate-800 md:hidden"
+          aria-label="Tutup menu"
+        >
+          <X size={18} />
+        </button>
       </div>
 
       {/* Navigation Menu */}
@@ -127,6 +136,6 @@ export default function Sidebar() {
           <span className="text-sm">Keluar</span>
         </button>
       </div>
-    </div>
+    </aside>
   )
 }
