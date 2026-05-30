@@ -354,15 +354,15 @@ export default function AHP() {
                 </div>
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm">
+                <table className="w-full min-w-[700px] text-sm">
                   <thead>
                     <tr className="bg-emerald-600 text-white">
-                      <th className="px-4 py-3 text-left font-semibold rounded-tl-lg">No</th>
-                      <th className="px-4 py-3 text-left font-semibold">Kriteria</th>
-                      <th className="px-4 py-3 text-center font-semibold">Tipe</th>
-                      <th className="px-4 py-3 text-center font-semibold">Bobot Asli</th>
-                      <th className="px-4 py-3 text-center font-semibold">Bobot AHP</th>
-                      <th className="px-4 py-3 text-center font-semibold rounded-tr-lg">Persentase</th>
+                      <th className="px-4 py-3 text-left font-semibold rounded-tl-lg whitespace-nowrap">No</th>
+                      <th className="px-4 py-3 text-left font-semibold whitespace-nowrap">Kriteria</th>
+                      <th className="px-4 py-3 text-center font-semibold whitespace-nowrap">Tipe</th>
+                      <th className="px-4 py-3 text-center font-semibold whitespace-nowrap">Bobot Asli</th>
+                      <th className="px-4 py-3 text-center font-semibold whitespace-nowrap">Bobot AHP</th>
+                      <th className="px-4 py-3 text-center font-semibold rounded-tr-lg whitespace-nowrap">Persentase</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-700/50">
@@ -371,7 +371,7 @@ export default function AHP() {
                         <td className="px-4 py-3 text-slate-400">{i + 1}</td>
                         <td className="px-4 py-3 font-semibold text-white">{k.nama}</td>
                         <td className="px-4 py-3 text-center">
-                          <span className={`inline-flex px-2.5 py-0.5 text-xs font-semibold rounded-full ${
+                          <span className={`inline-flex whitespace-nowrap px-2.5 py-0.5 text-xs font-semibold rounded-full ${
                             k.tipe === "benefit" ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" : "bg-red-500/20 text-red-300 border border-red-500/30"
                           }`}>
                             {k.tipe === "benefit" ? "Benefit" : "Cost"}
