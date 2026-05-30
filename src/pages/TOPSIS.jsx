@@ -209,8 +209,8 @@ function TOPSIS() {
   ];
 
   return (
-    <div className="p-8 relative z-10">
-      <div className="max-w-7xl mx-auto p-6">
+    <div className="p-3 sm:p-5 md:p-8 relative z-10">
+      <div className="max-w-7xl mx-auto p-0 sm:p-3 md:p-6">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
@@ -218,8 +218,8 @@ function TOPSIS() {
               <Trophy className="text-emerald-400" size={32} />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-white">Analisis TOPSIS</h1>
-              <p className="text-slate-400 mt-1">Technique for Order Preference by Similarity to Ideal Solution</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-white">Analisis TOPSIS</h1>
+              <p className="text-slate-400 mt-1 text-xs sm:text-sm md:text-base">Technique for Order Preference by Similarity to Ideal Solution</p>
             </div>
           </div>
 
@@ -242,8 +242,8 @@ function TOPSIS() {
         </div>
 
         {/* Calculation Section */}
-        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 mb-6">
-          <div className="flex items-center justify-between mb-6">
+        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 sm:p-6 mb-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-emerald-500/20 rounded-lg">
                 <Calculator className="text-emerald-400" size={20} />
@@ -256,7 +256,7 @@ function TOPSIS() {
             <button
               onClick={handleHitung}
               disabled={loading || alternatif.length === 0 || kriteria.length === 0 || nilai.length === 0}
-              className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 bg-green-600 text-white px-4 sm:px-6 py-3 rounded-lg hover:bg-green-700 transition font-medium disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto justify-center text-sm sm:text-base"
             >
               {loading ? (
                 <>
@@ -273,9 +273,9 @@ function TOPSIS() {
           </div>
 
           {/* Prerequisites */}
-          <div className="bg-slate-700/50 rounded-xl p-4">
+          <div className="bg-slate-700/50 rounded-xl p-3 sm:p-4">
             <h3 className="text-sm font-semibold text-slate-300 mb-3">Tahapan TOPSIS:</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center text-xs font-bold text-blue-400">1</div>
                 <span>Normalisasi Matriks</span>
@@ -300,7 +300,7 @@ function TOPSIS() {
         {hasil.length > 0 && (
           <div className="space-y-6">
             {/* Pemenang */}
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3 sm:p-4 md:p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-yellow-500/20 rounded-lg">
                   <Award className="text-yellow-400" size={20} />
@@ -308,7 +308,7 @@ function TOPSIS() {
                 <h3 className="text-lg font-bold text-white">Hasil Akhir - Parfum Terbaik</h3>
               </div>
 
-              <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-8 border border-emerald-500/30">
+              <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-4 sm:p-6 md:p-8 border border-emerald-500/30">
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-500/20 rounded-full mb-4">
                     <Trophy className="text-emerald-400" size={32} />
@@ -328,7 +328,7 @@ function TOPSIS() {
             </div>
 
             {/* Tabel Hasil Lengkap */}
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3 sm:p-4 md:p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-2 bg-emerald-500/20 rounded-lg">
                   <TrendingUp className="text-emerald-400" size={20} />
@@ -406,7 +406,7 @@ function TOPSIS() {
 
         {/* Completion Message */}
         {isCalculated && (
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-emerald-500/30 rounded-xl p-6">
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-emerald-500/30 rounded-xl p-4 sm:p-6">
             <div className="flex items-start gap-3">
               <div className="w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <Trophy className="text-emerald-400" size={16} />

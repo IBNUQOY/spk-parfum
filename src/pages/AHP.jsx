@@ -155,7 +155,7 @@ export default function AHP() {
 
   if (loading) {
     return (
-      <div className="p-8 relative z-10 flex items-center justify-center">
+      <div className="p-4 sm:p-8 relative z-10 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-4 border-slate-600 border-t-blue-500 mx-auto mb-4"></div>
           <p className="text-slate-400">Memuat data kriteria...</p>
@@ -165,8 +165,8 @@ export default function AHP() {
   }
 
   return (
-    <div className="p-8 relative z-10">
-      <div className="max-w-7xl mx-auto p-6">
+    <div className="p-3 sm:p-5 md:p-8 relative z-10">
+      <div className="max-w-7xl mx-auto p-0 sm:p-3 md:p-6">
 
         {/* Header */}
         <div className="mb-8">
@@ -175,7 +175,7 @@ export default function AHP() {
               <Calculator className="text-blue-400" size={32} />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-white">Analisis AHP</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">Analisis AHP</h1>
               <p className="text-slate-400 mt-1">Analytic Hierarchy Process — Penentuan Bobot Kriteria</p>
             </div>
           </div>
@@ -204,8 +204,8 @@ export default function AHP() {
         </div>
 
         {/* Calculate Button */}
-        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 mb-6">
-          <div className="flex items-center justify-between">
+        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 sm:p-6 mb-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-blue-500/20 rounded-lg border border-blue-500/30">
                 <Calculator className="text-blue-400" size={20} />
@@ -218,7 +218,7 @@ export default function AHP() {
             <button
               onClick={handleHitung}
               disabled={calculating || kriteria.length < 2}
-              className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/25"
+              className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 sm:px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-500/25 w-full sm:w-auto justify-center text-sm sm:text-base"
             >
               {calculating ? (
                 <>
@@ -235,9 +235,9 @@ export default function AHP() {
           </div>
 
           {/* Steps */}
-          <div className="mt-6 bg-slate-700/50 rounded-xl p-4">
+          <div className="mt-4 sm:mt-6 bg-slate-700/50 rounded-xl p-3 sm:p-4">
             <h3 className="text-sm font-semibold text-slate-300 mb-3">Tahapan AHP:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-3 text-sm">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3 text-sm">
               {[
                 { step: 1, label: "Matriks Perbandingan", color: "indigo" },
                 { step: 2, label: "Jumlah Kolom", color: "blue" },
@@ -261,7 +261,7 @@ export default function AHP() {
           <div className="space-y-6">
 
             {/* TABLE 1: Pairwise Comparison Matrix */}
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3 sm:p-4 md:p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-blue-500/20 rounded-lg border border-blue-500/30">
                   <Table2 className="text-blue-400" size={20} />
@@ -304,7 +304,7 @@ export default function AHP() {
             </div>
 
             {/* TABLE 2: Normalized Matrix */}
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3 sm:p-4 md:p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-violet-900/300/20 rounded-lg border border-violet-500/30">
                   <Table2 className="text-violet-400" size={20} />
@@ -343,7 +343,7 @@ export default function AHP() {
             </div>
 
             {/* TABLE 3: Priority Weights Summary */}
-            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3 sm:p-4 md:p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-emerald-500/20 rounded-lg border border-emerald-500/30">
                   <BarChart3 className="text-emerald-400" size={20} />
@@ -403,7 +403,7 @@ export default function AHP() {
 
             {/* TABLE 4: Consistency Check */}
             {consistencyData && (
-              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6">
+              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3 sm:p-4 md:p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className={`p-2 rounded-lg ${consistencyData.isConsistent ? 'bg-emerald-100' : 'bg-red-500/20'}`}>
                     {consistencyData.isConsistent ? (
@@ -419,7 +419,7 @@ export default function AHP() {
                 </div>
 
                 {/* Weighted Sum & Lambda */}
-                <div className="overflow-x-auto mb-6">
+                <div className="overflow-x-auto mb-4 sm:mb-6 -mx-1 sm:mx-0">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="bg-amber-600 text-white">
@@ -443,7 +443,7 @@ export default function AHP() {
                 </div>
 
                 {/* Summary Values */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
                   <div className="bg-slate-700/50 p-4 rounded-xl border border-slate-700/50">
                     <div className="text-xs text-slate-400 mb-1">λ max</div>
                     <div className="text-xl font-bold text-white">{formatNum(consistencyData.lambdaMax)}</div>
@@ -470,7 +470,7 @@ export default function AHP() {
             )}
 
             {/* Success Message */}
-            <div className="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-6">
+            <div className="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-4 sm:p-6">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <CheckCircle className="text-emerald-400" size={16} />
