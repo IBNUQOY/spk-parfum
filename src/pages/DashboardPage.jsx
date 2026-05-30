@@ -33,18 +33,18 @@ export default function Dashboard() {
   return (
     <div className='min-h-screen relative'>
 
-      <div className='p-4 sm:p-6 max-w-7xl mx-auto relative z-10'>
+      <div className='p-6 sm:p-8 max-w-7xl mx-auto relative z-10'>
         {/* Header Section */}
-        <div className='mb-8 sm:mb-12'>
-          <div className='inline-block mb-3'>
-            <span className='text-sm font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/30'>Dashboard</span>
+        <div className='mb-12'>
+          <div className='inline-block mb-4'>
+            <span className='text-sm font-semibold text-blue-400 bg-blue-500/10 px-4 py-1 rounded-full border border-blue-500/30'>Dashboard</span>
           </div>
-          <h1 className='text-3xl sm:text-5xl font-bold text-white mb-2'>SPK Parfum</h1>
-          <p className='text-sm sm:text-base text-slate-400'>Sistem Pendukung Keputusan untuk Seleksi Alternatif Parfum Terbaik</p>
+          <h1 className='text-4xl sm:text-5xl font-bold text-white mb-3'>SPK Parfum</h1>
+          <p className='text-base sm:text-lg text-slate-400'>Sistem Pendukung Keputusan untuk Seleksi Alternatif Parfum Terbaik</p>
         </div>
 
         {/* Stats Grid */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12'>
           {statCards.map((card, i) => {
             const Icon = card.icon;
             return (
@@ -55,12 +55,12 @@ export default function Dashboard() {
                 <div className='relative'>
                   <div className={`absolute inset-0 bg-gradient-to-r ${card.gradient} opacity-0 group-hover:opacity-10 rounded-2xl blur-xl transition-opacity duration-500`}></div>
                   
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${card.lightGradient} flex items-center justify-center mb-3 group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300`}>
-                    <Icon size={24} className={`bg-gradient-to-r ${card.gradient} bg-clip-text text-transparent`} />
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${card.lightGradient} flex items-center justify-center mb-4 group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300`}>
+                    <Icon size={28} className={`bg-gradient-to-r ${card.gradient} bg-clip-text text-transparent`} />
                   </div>
                   
-                  <div className='text-sm font-medium text-slate-500 mb-1'>{card.label}</div>
-                  <div className='text-3xl sm:text-4xl font-bold text-white mb-1'>{card.value}</div>
+                  <div className='text-sm font-medium text-slate-500 mb-2'>{card.label}</div>
+                  <div className='text-4xl font-bold text-white mb-2'>{card.value}</div>
                   <div className='flex items-center gap-2 text-sm text-emerald-400'>
                     <TrendingUp size={14} />
                     <span>Active</span>
@@ -72,12 +72,13 @@ export default function Dashboard() {
         </div>
 
         {/* Main Content Grid */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8'>
+        {/* Main Content Grid */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12'>
           {/* Top Result Card */}
           <div className='lg:col-span-2 card'>
-            <div className='mb-4'>
+            <div className='mb-6'>
               <div className='flex items-center justify-between'>
-                <h2 className='text-xl sm:text-2xl font-bold text-white'>Hasil Terbaik</h2>
+                <h2 className='text-2xl font-bold text-white'>Hasil Terbaik</h2>
                 <div className='h-3 w-3 bg-emerald-500 rounded-full'></div>
               </div>
             </div>
@@ -90,19 +91,19 @@ export default function Dashboard() {
                 <p className='text-slate-400 mt-4'>Memuat data...</p>
               </div>
             ) : topAlternatif ? (
-              <div className='bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-cyan-600/20 rounded-2xl p-6 sm:p-10 border border-blue-500/30 backdrop-blur-sm group hover:border-blue-500/50 transition-all duration-300'>
+              <div className='bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-cyan-600/20 rounded-2xl p-10 border border-blue-500/30 backdrop-blur-sm group hover:border-blue-500/50 transition-all duration-300'>
                 <div className='text-center'>
-                  <div className='text-5xl sm:text-7xl mb-4'>
+                  <div className='text-7xl mb-6'>
                     {/*<span>👑</span>*/}
                   </div>
                   <p className='text-slate-300 text-sm font-semibold mb-2 uppercase tracking-wider'>Pilihan Terbaik</p>
-                  <h3 className='text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4'>{topAlternatif.nama}</h3>
-                  <div className='flex flex-col sm:flex-row items-center justify-center gap-3'>
-                    <div className='px-5 py-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full text-white font-bold shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 transition-all duration-300 text-sm'>
+                  <h3 className='text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6'>{topAlternatif.nama}</h3>
+                  <div className='flex flex-col sm:flex-row items-center justify-center gap-4'>
+                    <div className='px-8 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full text-white font-bold shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 transition-all duration-300'>
                       Skor: {parseFloat(topAlternatif.skor).toFixed(4)}
                     </div>
                   </div>
-                  <p className='text-slate-400 text-sm mt-4'>Berdasarkan perhitungan AHP dan TOPSIS</p>
+                  <p className='text-slate-400 text-sm mt-6'>Berdasarkan perhitungan AHP dan TOPSIS</p>
                 </div>
               </div>
             ) : (
@@ -115,8 +116,8 @@ export default function Dashboard() {
 
           {/* System Info Card */}
           <div className='card'>
-            <h2 className='text-xl sm:text-2xl font-bold text-white mb-4'>Informasi Sistem</h2>
-            <div className='space-y-4'>
+            <h2 className='text-2xl font-bold text-white mb-6'>Informasi Sistem</h2>
+            <div className='space-y-6'>
               <div>
                 <h3 className='text-sm font-semibold text-slate-300 mb-3 uppercase tracking-wider'>Metode Analisis</h3>
                 <div className='space-y-3'>
@@ -152,8 +153,8 @@ export default function Dashboard() {
 
         {/* Process Steps */}
         <div className='card'>
-          <h2 className='text-xl sm:text-2xl font-bold text-white mb-6'>Alur Kerja Sistem</h2>
-          <div className='grid grid-cols-1 md:grid-cols-5 gap-3'>
+          <h2 className='text-2xl font-bold text-white mb-8'>Alur Kerja Sistem</h2>
+          <div className='grid grid-cols-1 md:grid-cols-5 gap-4'>
             {[
               { step: 1, label: 'Alternatif', desc: 'Daftar produk', icon: 'list' },
               { step: 2, label: 'Kriteria', desc: 'Parameter', icon: 'check' },
