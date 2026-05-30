@@ -108,7 +108,7 @@ function Hasil() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
               <div className="text-2xl font-bold text-green-600">{hasilData.length}</div>
               <div className="text-sm text-gray-600">Total Hasil</div>

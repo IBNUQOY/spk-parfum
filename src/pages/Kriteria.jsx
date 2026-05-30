@@ -157,7 +157,7 @@ function Kriteria() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4">
               <div className="text-2xl font-bold text-blue-400">{kriteria.length}</div>
               <div className="text-sm text-slate-400">Total Kriteria</div>

@@ -150,7 +150,7 @@ function Report() {
               <BarChart3 className="text-green-600" size={24} />
               Ringkasan Eksekutif
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-4">
               <div className="bg-white p-4 rounded-lg border border-gray-200">
                 <div className="text-2xl font-bold text-blue-600">{alternatif.length}</div>
                 <div className="text-sm text-gray-600">Alternatif</div>

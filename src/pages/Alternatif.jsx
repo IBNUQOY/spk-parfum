@@ -227,7 +227,7 @@ function Alternatif() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
             {[
               { label: 'Total Alternatif', value: alternatif.length, gradient: 'from-blue-500 to-cyan-500' },
               { label: 'Parfum Pria', value: alternatif.filter(a => a.klasifikasi === "PRIA").length, gradient: 'from-blue-600 to-blue-400' },

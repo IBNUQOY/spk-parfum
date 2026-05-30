@@ -1,12 +1,10 @@
-/* =============================================
-   COMPONENT STYLES
-   ============================================= */
+/* Component styles for responsive layout */
 
-/* Page Container Styling */
 .page-container {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  padding: 1.5rem;
 }
 
 .page-container::before {
@@ -18,7 +16,6 @@
   z-index: 1;
 }
 
-/* Page Header */
 .page-header {
   position: relative;
   z-index: 10;
@@ -27,7 +24,7 @@
 }
 
 .page-header h1 {
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 3vw, 3rem);
   font-weight: 700;
   color: white;
   margin-bottom: 0.5rem;
@@ -35,10 +32,9 @@
 
 .page-header p {
   color: rgb(148 163 184);
-  font-size: 1.125rem;
+  font-size: clamp(0.95rem, 1.1vw, 1.2rem);
 }
 
-/* Stat Cards */
 .stat-card {
   position: relative;
   overflow: hidden;
@@ -78,7 +74,7 @@
 }
 
 .stat-card-value {
-  font-size: 2.25rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
   color: white;
   margin-bottom: 0.5rem;
@@ -90,9 +86,8 @@
   color: rgb(148 163 184);
 }
 
-/* Form Card */
 .form-card {
-  /* inherits .card styles */
+  width: 100%;
 }
 
 .form-group {
@@ -102,7 +97,7 @@
 .form-label {
   display: block;
   color: rgb(203 213 225);
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
@@ -111,10 +106,10 @@
 .form-select,
 .form-textarea {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.9rem 1rem;
   background: rgba(30, 41, 59, 0.5);
   border: 1px solid rgba(71, 85, 105, 0.5);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   color: white;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -134,12 +129,6 @@
   box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 0 20px rgba(59, 130, 246, 0.2);
 }
 
-.form-textarea {
-  resize: none;
-  min-height: 100px;
-}
-
-/* Table */
 .data-table {
   width: 100%;
 }
@@ -167,26 +156,17 @@
   transition: color 0.2s ease;
 }
 
-.data-table tbody tr {
-  transition: background-color 0.2s ease;
-}
-
 .data-table tbody tr:hover {
   background: rgba(23 37 84 / 0.3);
 }
 
-.data-table tbody tr:last-child td {
-  border-bottom: 0;
-}
-
-/* Action Buttons */
 .btn-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   background: rgb(51 65 85);
   color: rgb(203 213 225);
   border: none;
@@ -214,128 +194,9 @@
   color: rgb(209 250 229);
 }
 
-/* Badge */
-.badge-primary {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: rgba(59, 130, 246, 0.2);
-  color: rgb(147 197 253);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.badge-success {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: rgba(16, 185, 129, 0.2);
-  color: rgb(110 231 183);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-/* Responsive utility enhancements */
-.page-container {
-  padding: 1.5rem;
-}
-
-.page-header {
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 992px) {
-  .page-container {
-    padding: 1.25rem;
-  }
-
-  .page-header h1 {
-    font-size: 2.25rem;
-  }
-
-  .stat-card-icon {
-    width: 3rem;
-    height: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-container {
-    padding: 1rem;
-  }
-
-  .page-header h1 {
-    font-size: 2rem;
-  }
-
-  .page-header p,
-  .page-header h2,
-  .stat-card-label {
-    font-size: 0.95rem;
-  }
-
-  .stat-card-value {
-    font-size: 2rem;
-  }
-
-  .data-table th,
-  .data-table td {
-    padding: 0.75rem 1rem;
-  }
-
-  .btn-icon {
-    width: 2.25rem;
-    height: 2.25rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .page-container {
-    padding: 0.75rem;
-  }
-
-  .page-header h1 {
-    font-size: 1.75rem;
-  }
-
-  .page-header p,
-  .page-header h2,
-  .stat-card-label {
-    font-size: 0.9rem;
-  }
-
-  .stat-card-icon {
-    width: 2.75rem;
-    height: 2.75rem;
-  }
-
-  .stat-card-value {
-    font-size: 1.85rem;
-  }
-
-  .data-table th,
-  .data-table td {
-    padding: 0.65rem 0.75rem;
-  }
-}
-
-
-.badge-warning {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: rgba(245, 158, 11, 0.2);
-  color: rgb(252 211 77);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
+.badge-primary,
+.badge-success,
+.badge-warning,
 .badge-danger {
   display: inline-flex;
   align-items: center;
@@ -343,12 +204,32 @@
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.badge-primary {
+  background: rgba(59, 130, 246, 0.2);
+  color: rgb(147 197 253);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.2);
+  color: rgb(110 231 183);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: rgb(252 211 77);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-danger {
   background: rgba(239, 68, 68, 0.2);
   color: rgb(252 165 165);
   border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-/* Modal/Dialog */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -362,13 +243,16 @@
 }
 
 .modal-content {
-  max-width: 28rem;
+  max-width: min(95vw, 40rem);
   width: 100%;
   margin: 0 1rem;
   animation: scaleIn 0.5s ease-out;
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
 }
 
-/* Loading Spinner */
 .spinner {
   display: inline-block;
   width: 1.5rem;
@@ -379,11 +263,6 @@
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Empty State */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -412,14 +291,12 @@
   margin-top: 0.5rem;
 }
 
-/* Divider */
 .divider {
   height: 1px;
   background: linear-gradient(to right, rgb(51 65 85), transparent);
   margin: 1rem 0;
 }
 
-/* Tooltip */
 .tooltip {
   position: absolute;
   bottom: 100%;
@@ -440,9 +317,9 @@
   opacity: 1;
 }
 
-/* =============================================
-   ANIMATIONS
-   ============================================= */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -450,44 +327,81 @@
 }
 
 @keyframes scaleIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(400px);
-    opacity: 0;
+@media (max-width: 992px) {
+  .page-container {
+    padding: 1.25rem;
   }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-    opacity: 1;
+  .page-header h1 {
+    font-size: clamp(1.6rem, 4vw, 2.75rem);
   }
-  to {
-    transform: translateX(400px);
-    opacity: 0;
+
+  .stat-card-icon {
+    width: 3rem;
+    height: 3rem;
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-in-out;
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  .page-header p,
+  .page-header h2,
+  .stat-card-label {
+    font-size: 0.95rem;
+  }
+
+  .stat-card-value {
+    font-size: 2rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 0.9rem;
+  }
+
+  .btn-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
 }
 
-.animate-scale-in {
-  animation: scaleIn 0.5s ease-out;
-}
+@media (max-width: 576px) {
+  .page-container {
+    padding: 0.75rem;
+  }
 
-.toast-enter {
-  animation: slideIn 0.3s ease-out;
-}
+  .page-header h1 {
+    font-size: 1.85rem;
+  }
 
-.toast-exit {
-  animation: slideOut 0.3s ease-in;
+  .page-header p,
+  .page-header h2,
+  .stat-card-label {
+    font-size: 0.9rem;
+  }
+
+  .stat-card-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .stat-card-value {
+    font-size: 1.85rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.65rem 0.75rem;
+  }
 }

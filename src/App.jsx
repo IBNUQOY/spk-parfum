@@ -57,7 +57,7 @@ function AppLayout({ children }) {
           </div>
         </div>
 
-        <main className="min-h-screen mx-auto w-full max-w-[1800px] px-4 py-4 md:px-6 lg:px-8 xl:px-10">
+        <main className="min-h-screen mx-auto w-full max-w-screen-2xl px-4 py-4 sm:px-5 md:px-6 lg:px-8 xl:px-10">
           {children}
         </main>
       </div>

@@ -443,7 +443,7 @@ export default function AHP() {
                 </div>
 
                 {/* Summary Values */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="bg-slate-700/50 p-4 rounded-xl border border-slate-700/50">
                     <div className="text-xs text-slate-400 mb-1">λ max</div>
                     <div className="text-xl font-bold text-white">{formatNum(consistencyData.lambdaMax)}</div>

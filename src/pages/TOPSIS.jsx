@@ -224,7 +224,7 @@ function TOPSIS() {
           </div>
 
           {/* Status Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {dataStatus.map((item, index) => (
               <div key={index} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4">
                 <div className="flex items-center justify-between mb-2">
@@ -275,7 +275,7 @@ function TOPSIS() {
           {/* Prerequisites */}
           <div className="bg-slate-700/50 rounded-xl p-4">
             <h3 className="text-sm font-semibold text-slate-300 mb-3">Tahapan TOPSIS:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 bg-blue-500/20 rounded-full flex items-center justify-center text-xs font-bold text-blue-400">1</div>
                 <span>Normalisasi Matriks</span>
